@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.banner{
+    height: 100vh;
+    background-image: url(../img/mountain-bg.jpeg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+.product{
+    /* background-color: red; */
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    bottom: 120px;
+    transform: translateX(-50%);
+    z-index: 20;
+    transition: 0.8s;
+    --left: 0px;
+    display: flex;
+}
+.soda1{
+    background:
+      url(../img/dragon-poster1.jpeg) var(--left) 0,
+     url(../img/soda-mock.png);
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    mask-image: url(../img/soda-mock.png);
+    mask-size: auto 100%;
+    transition: 0.8s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120px);
+
+}
+.soda2{
+    background:
+    url(../img/fire-poster.jpeg) var(--left) 0,
+     url(../img/soda-mock.png);
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    mask-image: url(../img/soda-mock.png);
+    mask-size: auto 100%;
+    transition: 0.8s ;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120px);
+}
+.product:hover{
+    --left: -1000px;
+    transform: translateX(-50%) translateY(-120px);
+}
+.cloud{
+    position: absolute;
+    inset: 0 0 0 0;
+    pointer-events: none;
+}
+.cloud img{
+    position: absolute;
+    transition: 0.8s;
+    height: 600px;
+    /* width: 900px; */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+    z-index: 30;
+}
+
+.soda2{
+    opacity: 0;
+}
+.product:hover .soda2{
+    opacity: 1;
+}
